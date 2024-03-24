@@ -17,13 +17,13 @@ class Average{
 		for(int i = 0; i<classNum; i++){
 			score[i] = sc.nextInt();
 			if(score[i] > max) {
-				max = score[i];
+				max = score[i]; //입력받으면서 최대값 구하기
 			}
-			sum += score[i];
+			sum += score[i]; //처음 입력된 점수의 합 구하기
 		}
 		
-		sum = sum * 100 / max;
-		avg = sum / classNum;
+		sum = sum * 100 / max; //조작 후 점수의 합 구하기
+		avg = sum / classNum; //조작 후 평균 구하기
 		
 		System.out.println(avg);
 		
