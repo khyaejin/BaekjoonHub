@@ -7,11 +7,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int starNum = sc.nextInt();
         for(int i =0; i<starNum; i++){
-            for(int j=0; j<starNum; j++){
-                if(j<starNum-i){
+            for(int j=0; j<starNum-i; j++){
                     System.out.print("*");
-                }
-
             }
             System.out.println();
         }
