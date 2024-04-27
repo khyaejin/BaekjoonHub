@@ -1,20 +1,28 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine());  //테스트 케이스 개수
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < t; i++) {
-            int[] arr = new int[10];
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < 10; j++) {
-                arr[j] = Integer.parseInt(st.nextToken());
+        int testCase = Integer.parseInt(br.readLine());
+
+        while (testCase > 0) { //총 testCase만큼 반복
+            StringTokenizer st = new StringTokenizer(br.readLine(), " "); //br로 한 줄 읽어서 " " 단위로 구분
+            int[] nums = new int[10];
+
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = Integer.parseInt(st.nextToken()); //nums배열에 넣어주고
             }
-            Arrays.sort(arr);  //배열 오름차순으로 정렬하기
-            sb.append(arr[7] + "\n");  //3번째로 큰 수
+
+            Arrays.sort(nums); //정렬
+
+            System.out.println(nums[7] + " "); //3번재로 큰 수 업로드
+
+            testCase--;
         }
-        System.out.print(sb);
     }
 }
