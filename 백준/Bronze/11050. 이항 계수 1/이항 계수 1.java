@@ -13,8 +13,11 @@ public class Main {
             System.out.println("1");
         }else{
             // n! / n-k! k!
+
+            //분자
             int numerator = factorial(N - K) * factorial(K);
 
+            //분모
             int denominator = factorial(N);
             System.out.println(denominator/numerator);
         }
