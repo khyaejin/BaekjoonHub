@@ -13,10 +13,10 @@ public class Main {
         while (testCase-- > 0) {
             String[] input = br.readLine().split(" ");
             // String className = input[0]; // 과목명은 사용하지 않음
-            int credit = Integer.parseInt(input[1]); // 학점
+            int credit = Integer.parseInt(input[1]); // 수강학점
             String grade = input[2]; // 성적
 
-            double gradePoint = convertGradeToPoint(grade); // 성적을 학점으로 변환
+            double gradePoint = convertGradeToPoint(grade); // A+,A0 ... -> 4.3, 4.0으로 변환
 
             // 해당 과목의 학점 * 성적을 총 성적에 더함
             totalGrade += credit * gradePoint;
