@@ -1,4 +1,3 @@
-import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Main {
@@ -36,10 +35,10 @@ public class Main {
         while(true) {
             // 현재 칸이 청소되어있는지 확인
             if (room[x][y] == 0) { //청소 안 된 경우
-                cleand();
+                clean();
             }
             // 인접한 4칸 중 청소가 되지 않은 칸이 있는지 판별
-            if (isArroundCleaned()) { // 청소 되지 않은 빈 칸이 있는 경우
+            if (isAroundCleaned()) { // 청소 되지 않은 빈 칸이 있는 경우
                 // 반시계 방향 90도 회전
                 d = (d + 3) % 4;
 
@@ -63,15 +62,15 @@ public class Main {
     }
 
     // 청소하는 메서드
-    private static void cleand() {
+    private static void clean() {
         room[x][y] = 2; // 2 : 청소 완료
         count++;
     }
 
     // 바라보는 방향대로 후진 가능한지 판별하는 메서드
     private static boolean isReversePossible() {
-//        int backD = (d+2)%4;
-        if(room[x-dx[d]][y-dy[d]]==1) { // 뒤가 벽인 경우
+        int backD = (d + 2) % 4;
+        if(room[x+dx[backD]][y+dy[backD]]==1) { // 뒤가 벽인 경우
             return false;
         }
         else {
@@ -80,7 +79,7 @@ public class Main {
     }
 
     // 인접한 4칸 중 청소가 되지 않은 칸이 있는지 판별
-    private static boolean isArroundCleaned() {
+    private static boolean isAroundCleaned() {
         // 모두 청소할 수 있는 칸(0) 이 아닌 경우
         if(room[x+dx[0]][y+dy[0]] != 0 && //북
                 room[x+dx[1]][y+dy[1]] != 0 && // 동
